@@ -1,0 +1,38 @@
+Additional ADMIN Ports:---
+
+SWITCH:-
+PORT 						COLOUR			NETWORK NAME
+Noida-AZ2-Switch1-39				Blue			RF Connectivity
+Noida-AZ2-Switch1-40				Blue			IDRAC for ADMIN
+Noida-AZ2-CoreSwitch-16				Red			Internet Conectivity
+
+SWITCH 1:--
+
+PORT 				COLOUR			NETWORK NAME
+1-10				Grey			Provisioning Network
+33-35				Yellow			Switch Management
+36				Orange			Switch Management Through ADMIN Node
+37				Blue			IPMI ADMIN-NODE
+38-46				Blue			Idrac Network-Overcloud Only
+
+
+
+
+SWITCH 2:--
+
+PORT 				COLOUR			NETWORK NAME
+1-10				Purple 			Management Network
+13-22				White			Storage Network
+25-34				Green			API Network		
+37-42				Black			Storage Replication(37-39-Controller,40-42 Storage)
+
+
+
+
+SWITCH 3:--(10G)
+
+PORT 				COLOUR				NETWORK NAME
+1-10				Black (10G)			Externel Network
+25-34				Black (10G)			Tenant Network
+
+
