@@ -1,0 +1,224 @@
+1. Admin Node details:- 
+
+BIOS:- 
+-----
+
+Bios-vendor   Dell Inc.
+Bios-version  6.5.0
+System-product-name  PowerEdge R610
+System Serial Number  H01BJS1 
+
+
+Management Interface :- 
+-----------------------
+172.16.4.3
+255.255.255.0
+172.16.4.254
+8.8.8.8
+
+Memory :- 
+---------
+96 GB
+
+
+CPU :- 
+------
+Vendor: GenuineIntel Model: Intel(R) Xeon(R) CPU  X5650 @ 2.67GHz Speed: 2659 MHz
+
+
+Storage :- 
+--------
+
+RAID 10 
+
+For OS  100GB
+Reaming give to datastore for RAID 10
+
+
+
+
+
+
+======================================================================================================================================
+1. FIRE1-OC-MGT-0-L3-IN :-    OverCloud
+------------------------------
+
+Physical connectivity :-  
+NIC 0 :- Network 4-10G External  10.10.0.1/16
+NIC 1 :- Network 6-Red Uplink  103.107.67.2
+NIC 2 :- Network 1-Mgmt       10.10.20.2/24
+
+
+
+
+# sudo mount /dev/cdrom /mnt
+# sudo mount /dev/cdrom /mnt
+# sudo /mnt/Linux/install.sh
+
+# reboot
+
+
+#show int 
+
+# confi
+
+# set interfaces ethernet eth1 address 103.107.67.2/24
+# commit 
+# save
+# set service ssh port 1024
+# set service ssh listen-address 103.107.67.2
+# set system name-server 8.8.8.8
+# set system time-zone Asia/Kolkata
+# commit
+
+# save
+
+# exit
+
+# config
+
+# set system gateway-address 103.107.67.1
+
+# commit
+
+# save
+
+# ping 8.8.8.8
+
+# set int ethernet eth0 address 10.10.0.1/16
+
+# set int ethernet eth0 address 10.10.20.2/16
+
+# commit
+
+# save
+
+vyos
+vyos
+
+------------------------------------------------
+
+
+2. FIRE2-UC-MGT-0-L3-IN :-   UnderCloud
+------------------------
+
+Physical connectivity :-  
+NIC 0 :- Network 4-10G External  10.9.9.1/16
+NIC 1 :- Network 6-Red Uplink    103.107.67.6/24
+NIC 2 :- Network 1-Mgmt          10.10.20.3/24
+
+
+
+# sudo mount /dev/cdrom /mnt
+# sudo mount /dev/cdrom /mnt
+# sudo /mnt/Linux/install.sh
+
+# reboot
+
+
+
+=========================================================
+
+3. VPN1-OC-MGT-0-L3-IN :-  OverCloud
+   --------------------
+
+
+Physical connectivity :-  
+
+NIC 0 :- Network 9-RF         172.17.17.11/16       
+NIC 1 :- Network 6-Red Uplink 103.107.67.5/24 
+NIC 2 :- Network 1-Mgmt       10.10.20.1/24 
+
+
+# sudo mount /dev/cdrom /mnt
+# sudo mount /dev/cdrom /mnt
+# sudo /mnt/Linux/install.sh
+
+# reboot
+
+
+
+
+==================================================================
+
+4. VPN1-UC-MGT-0-L3-IN :-   UnderCloud
+   ---------------------
+
+Physical connectivity :-  
+NIC 0 :- Network 9-RF        172.17.17.10/16
+NIC 1 :- Network 0-Provision 192.168.3.1/24 
+
+
+
+# sudo mount /dev/cdrom /mnt
+# sudo mount /dev/cdrom /mnt
+# sudo /mnt/Linux/install.sh
+
+# reboot
+
+
+
+
+
+=====================================================
+
+
+
+
+
+
+
+
+Controller 01 :---
+
+IDRAC IP:--- 192.168.3.201
+NIC0:--- d4:be:d9:b2:90:7b
+
+Controller 02 :---
+
+IDRAC IP:--- 192.168.3.202
+NIC0:--- 18:03:73:ec:1e:9e
+
+Controller 03 :---
+
+IDRAC IP:--- 192.168.3.203
+NIC0:--- 00:21:9b:a3:f7:06
+
+**************************************************
+
+Compute 01 :---
+
+IDRAC IP:--- 192.168.3.204
+NIC0:--- EC:F4:BB:CF:03:C8
+
+Compute 02 :---
+
+IDRAC IP:--- 192.168.3.205
+NIC0:--- 24:6E:96:4C:96:58
+
+Compute 03 :---
+
+IDRAC IP:--- 192.168.3.206
+NIC0:--- 24:6E:96:4E:1B:44
+
+******************************************************
+
+Storage 01 :---
+
+IDRAC IP:--- 192.168.3.207
+NIC0:--- B8:CA:3A:F6:B2:8F
+
+Storage 02 :---
+
+IDRAC IP:--- 192.168.3.208
+NIC0:--- B8:CA:3A:F6:98:0F
+
+Storage 03 :---
+
+IDRAC IP:--- 192.168.3.209
+NIC0:--- B8:CA:3A:F6:9C:68
+
+
+----------------------------------------
+
+
