@@ -1,123 +1,85 @@
-vyos@VPN1-UC-MGT-0-L3-IN:~$ history
-    1  2019-09-02T06:44:21+0000 history
-    2  2019-09-02T06:45:13+0000 sudo mount /dev/cdrom /mnt/
-    3  2019-09-02T06:45:46+0000 sudo mount /dev/cdrom /mnt/
-    4  2019-09-02T06:45:48+0000 sudo mount /dev/cdrom /mnt/
-    5  2019-09-02T06:45:52+0000 df -h
-    6  2019-09-02T06:45:57+0000 cd /mnt/
-    7  2019-09-02T06:46:00+0000 ls
-    8  2019-09-02T06:46:03+0000 cd Linux/
-    9  2019-09-02T06:46:05+0000 ls
-   10  2019-09-02T06:46:08+0000 ./install.sh
-   11  2019-09-02T06:46:52+0000 sudo /mnt/Linux/install.sh
-   12  2019-09-02T06:47:05+0000 reboot
-   13  2019-09-02T06:49:18+0000 history
-   14  2019-09-02T10:04:12+0000 show int
-   15  2019-09-02T10:04:43+0000 confi
-   16  2019-09-02T06:44:21+0000 history
-   17  2019-09-02T06:45:13+0000 sudo mount /dev/cdrom /mnt/
-   18  2019-09-02T06:45:46+0000 sudo mount /dev/cdrom /mnt/
-   19  2019-09-02T06:45:48+0000 sudo mount /dev/cdrom /mnt/
-   20  2019-09-02T06:45:52+0000 df -h
-   21  2019-09-02T06:45:57+0000 cd /mnt/
-   22  2019-09-02T06:46:00+0000 ls
-   23  2019-09-02T06:46:03+0000 cd Linux/
-   24  2019-09-02T06:46:05+0000 ls
-   25  2019-09-02T06:46:08+0000 ./install.sh
-   26  2019-09-02T06:46:52+0000 sudo /mnt/Linux/install.sh
-   27  2019-09-02T06:47:05+0000 reboot
-   28  2019-09-02T06:49:18+0000 history
-   29  2019-09-02T10:04:12+0000 show int
-   30  2019-09-02T10:04:43+0000 confi
-   31  2019-09-02T10:05:51+0000 set interfaces ethernet eth0 address 172.17.17.10/16
-   32  2019-09-02T10:06:34+0000 set interfaces ethernet eth1 address 192.168.3.1/24
-   33  2019-09-02T10:06:41+0000 commit
-   34  2019-09-02T10:06:44+0000 save
-   35  2019-09-02T10:06:47+0000 exit
-   36  2019-09-02T10:06:49+0000 show int
-   37  2019-09-02T10:06:57+0000 confi
-   38  2019-09-02T10:07:27+0000 set service ssh port 1024
-   39  2019-09-02T10:07:51+0000 set service ssh listen-address 172.17.17.10
-   40  2019-09-02T10:07:54+0000 commit
-   41  2019-09-02T10:07:55+0000 save
-   42  2019-09-02T10:07:58+0000 exit
-   43  2019-09-02T10:07:58+0000 exit
-   44  2019-09-02T10:08:42+0000 confi
-   45  2019-09-02T10:09:01+0000 exit
-   46  2019-09-02T10:09:01+0000 exit
-   47  2019-09-02T10:49:11+0000 confi
-   48  2019-09-02T10:49:14+0000 set system host-name 'VPN1-UC-MGT-0-L3-IN'
-   49  2019-09-02T10:49:52+0000 set interfaces ethernet eth0 description "RF"
-   50  2019-09-02T10:49:54+0000 set interfaces ethernet eth1 description "Provision"
-   51  2019-09-02T10:50:51+0000 set nat source rule 9999 outbound-interface 'any'
-   52  2019-09-02T10:50:51+0000 set nat source rule 9999 protocol 'all'
-   53  2019-09-02T10:50:51+0000 set nat source rule 9999 source address '192.168.3.0/24'
-   54  2019-09-02T10:50:52+0000 set nat source rule 9999 translation address 'masquerade'
-   55  2019-09-02T10:52:23+0000 set firewall name FIREWALL_IN default-action 'drop'
-   56  2019-09-02T10:52:24+0000 set firewall name FIREWALL_IN rule 1 action 'accept'
-   57  2019-09-02T10:52:24+0000 set firewall name FIREWALL_IN rule 1 description 'Establiched Connections'
-   58  2019-09-02T10:52:24+0000 set firewall name FIREWALL_IN rule 1 state established 'enable'
-   59  2019-09-02T10:52:24+0000 set firewall name FIREWALL_IN rule 1 state related 'enable'
-   60  2019-09-02T10:52:24+0000 set firewall name FIREWALL_IN rule 2 action 'accept'
-   61  2019-09-02T10:52:24+0000 set firewall name FIREWALL_IN rule 2 description 'PING Incoming'
-   62  2019-09-02T10:52:24+0000 set firewall name FIREWALL_IN rule 2 destination address '0.0.0.0/0'
-   63  2019-09-02T10:52:24+0000 set firewall name FIREWALL_IN rule 2 protocol 'icmp'
-   64  2019-09-02T10:52:24+0000 set firewall name FIREWALL_IN rule 2 source address '0.0.0.0/0'
-   65  2019-09-02T10:52:24+0000 set firewall name FIREWALL_OUT default-action 'drop'
-   66  2019-09-02T10:52:24+0000 set firewall name FIREWALL_OUT rule 1 action 'accept'
-   67  2019-09-02T10:52:24+0000 set firewall name FIREWALL_OUT rule 1 description 'Established Connections'
-   68  2019-09-02T10:52:24+0000 set firewall name FIREWALL_OUT rule 1 state established 'enable'
-   69  2019-09-02T10:52:24+0000 set firewall name FIREWALL_OUT rule 1 state related 'enable'
-   70  2019-09-02T10:52:24+0000 set firewall name FIREWALL_OUT rule 2 action 'accept'
-   71  2019-09-02T10:52:24+0000 set firewall name FIREWALL_OUT rule 2 description 'DNS Outgoing'
-   72  2019-09-02T10:52:24+0000 set firewall name FIREWALL_OUT rule 2 destination port '53'
-   73  2019-09-02T10:52:24+0000 set firewall name FIREWALL_OUT rule 2 protocol 'udp'
-   74  2019-09-02T10:52:24+0000 set firewall name FIREWALL_OUT rule 3 action 'accept'
-   75  2019-09-02T10:52:24+0000 set firewall name FIREWALL_OUT rule 3 description 'PING Outgoing'
-   76  2019-09-02T10:52:24+0000 set firewall name FIREWALL_OUT rule 3 destination address '0.0.0.0/0'
-   77  2019-09-02T10:52:24+0000 set firewall name FIREWALL_OUT rule 3 protocol 'icmp'
-   78  2019-09-02T10:52:24+0000 set firewall name FIREWALL_OUT rule 3 source address '0.0.0.0/0'
-   79  2019-09-02T10:52:24+0000 set firewall name FIREWALL_OUT rule 400 action 'accept'
-   80  2019-09-02T10:52:25+0000 set firewall name FIREWALL_OUT rule 400 description 'TCP Outgoing'
-   81  2019-09-02T10:52:25+0000 set firewall name FIREWALL_OUT rule 400 destination address '0.0.0.0/0'
-   82  2019-09-02T10:52:25+0000 set firewall name FIREWALL_OUT rule 400 protocol 'tcp'
-   83  2019-09-02T10:52:25+0000 set firewall name FIREWALL_OUT rule 400 source address '0.0.0.0/0'
-   84  2019-09-02T10:52:25+0000 set interfaces ethernet eth0 firewall in name 'FIREWALL_IN'
-   85  2019-09-02T10:52:26+0000 set interfaces ethernet eth1 firewall out name 'FIREWALL_OUT'
-   86  2019-09-02T10:52:29+0000 commit
-   87  2019-09-02T10:52:31+0000 save
-   88  2019-09-02T10:52:58+0000 exit
-   89  2019-09-02T10:52:58+0000 exit
-   90  2019-09-02T10:53:11+0000 cd /config/
-   91  2019-09-02T10:53:13+0000 ll
-   92  2019-09-02T10:54:18+0000 cd ..
-   93  2019-09-02T10:54:25+0000 rm -rf /config/easy-rsa2
-   94  2019-09-02T10:54:25+0000 cp -rv /usr/share/doc/openvpn/examples/easy-rsa/2.0/ /config/easy-rsa2
-   95  2019-09-02T10:54:26+0000 sed -i 's/export KEY_SIZE=1024/export KEY_SIZE=2048/g' /config/easy-rsa2/vars
-   96  2019-09-02T10:54:26+0000 sed -i 's/export KEY_COUNTRY="US"/export KEY_COUNTRY="IN"/g' /config/easy-rsa2/vars
-   97  2019-09-02T10:54:26+0000 sed -i 's/export KEY_CITY="SanFrancisco"/export KEY_CITY="Noida"/g' /config/easy-rsa2/vars
-   98  2019-09-02T10:54:26+0000 sed -i 's/export KEY_PROVINCE="CA"/export KEY_PROVINCE="UP"/g' /config/easy-rsa2/vars
-   99  2019-09-02T10:54:26+0000 sed -i 's/export KEY_ORG="Fort-Funston"/export KEY_ORG="i2k2"/g' /config/easy-rsa2/vars
-  100  2019-09-02T10:56:14+0000 cd /config/easy-rsa2/ && source ./vars
-  101  2019-09-02T10:56:20+0000 ./clean-all
-  102  2019-09-02T10:56:26+0000 ./build-ca
-  103  2019-09-02T10:56:37+0000 ./build-dh
-  104  2019-09-02T10:59:19+0000 ./build-key-server clientOvpn
-  105  2019-09-02T10:59:48+0000 mkdir /config/clientOvpn/auth/_ovpncrt1 -p
-  106  2019-09-02T10:59:48+0000 sudo cp /config/easy-rsa2/keys/ca.crt /config/clientOvpn/auth/
-  107  2019-09-02T10:59:48+0000 sudo cp /config/easy-rsa2/keys/dh2048.pem /config/clientOvpn/auth/
-  108  2019-09-02T10:59:48+0000 sudo cp /config/easy-rsa2/keys/clientOvpn.key /config/clientOvpn/auth/
-  109  2019-09-02T10:59:49+0000 sudo cp /config/easy-rsa2/keys/clientOvpn.crt /config/clientOvpn/auth/
-  110  2019-09-02T11:00:04+0000 ./build-key-pass clientOvpncrt1
-  111  2019-09-02T11:00:43+0000 cp /config/easy-rsa2/keys/clientOvpncrt1* /config/clientOvpn/auth/_ovpncrt1/
-  112  2019-09-02T11:00:44+0000 cp /config/easy-rsa2/keys/ca.crt /config/clientOvpn/auth/_ovpncrt1/
-  113  2019-09-02T11:01:08+0000 vi /config/clientOvpn/auth/_ovpncrt1/clientOvpncrt1.ovpn
-  114  2019-09-02T11:01:54+0000 show int
-  115  2019-09-02T11:02:22+0000 vi /config/clientOvpn/auth/_ovpncrt1/clientOvpncrt1.ovpn
-  116  2019-09-02T12:01:28+0000 history
-  117  2019-09-03T05:25:49+0000 history
-  118  2019-09-03T05:26:04+0000 show interfaces
-  119  2019-09-03T05:47:15+0000 history
+vyos@VPN1-UC-MGT-0-L3-IN:~$ 
+#xen-tool Installation
+sudo mount /dev/cdrom /mnt/
+sudo /mnt/Linux/install.sh
+reboot
+
+# show int
+confi
+set interfaces ethernet eth0 address 172.17.17.10/16
+set interfaces ethernet eth1 address 192.168.3.1/24
+set service ssh port 1024
+set service ssh listen-address 172.17.17.10
+commit
+save
+exit
+confi
+set system host-name 'VPN1-UC-MGT-0-L3-IN'
+set interfaces ethernet eth0 description "RF"
+set interfaces ethernet eth1 description "Provision"
+set nat source rule 9999 outbound-interface 'any'
+set nat source rule 9999 protocol 'all'
+set nat source rule 9999 source address '192.168.3.0/24'
+set nat source rule 9999 translation address 'masquerade'
+set firewall name FIREWALL_IN default-action 'drop'
+set firewall name FIREWALL_IN rule 1 action 'accept'
+set firewall name FIREWALL_IN rule 1 description 'Establiched Connections'
+set firewall name FIREWALL_IN rule 1 state established 'enable'
+set firewall name FIREWALL_IN rule 1 state related 'enable'
+set firewall name FIREWALL_IN rule 2 action 'accept'
+set firewall name FIREWALL_IN rule 2 description 'PING Incoming'
+set firewall name FIREWALL_IN rule 2 destination address '0.0.0.0/0'
+set firewall name FIREWALL_IN rule 2 protocol 'icmp'
+set firewall name FIREWALL_IN rule 2 source address '0.0.0.0/0'
+set firewall name FIREWALL_OUT default-action 'drop'
+set firewall name FIREWALL_OUT rule 1 action 'accept'
+set firewall name FIREWALL_OUT rule 1 description 'Established Connections'
+set firewall name FIREWALL_OUT rule 1 state established 'enable'
+set firewall name FIREWALL_OUT rule 1 state related 'enable'
+set firewall name FIREWALL_OUT rule 2 action 'accept'
+set firewall name FIREWALL_OUT rule 2 description 'DNS Outgoing'
+set firewall name FIREWALL_OUT rule 2 destination port '53'
+set firewall name FIREWALL_OUT rule 2 protocol 'udp'
+set firewall name FIREWALL_OUT rule 3 action 'accept'
+set firewall name FIREWALL_OUT rule 3 description 'PING Outgoing'
+set firewall name FIREWALL_OUT rule 3 destination address '0.0.0.0/0'
+set firewall name FIREWALL_OUT rule 3 protocol 'icmp'
+set firewall name FIREWALL_OUT rule 3 source address '0.0.0.0/0'
+set firewall name FIREWALL_OUT rule 400 action 'accept'
+set firewall name FIREWALL_OUT rule 400 description 'TCP Outgoing'
+set firewall name FIREWALL_OUT rule 400 destination address '0.0.0.0/0'
+set firewall name FIREWALL_OUT rule 400 protocol 'tcp'
+set firewall name FIREWALL_OUT rule 400 source address '0.0.0.0/0'
+set interfaces ethernet eth0 firewall in name 'FIREWALL_IN'
+set interfaces ethernet eth1 firewall out name 'FIREWALL_OUT'
+commit
+save
+exit
+
+# Openvpn
+rm -rf /config/easy-rsa2
+cp -rv /usr/share/doc/openvpn/examples/easy-rsa/2.0/ /config/easy-rsa2
+sed -i 's/export KEY_SIZE=1024/export KEY_SIZE=2048/g' /config/easy-rsa2/vars
+sed -i 's/export KEY_COUNTRY="US"/export KEY_COUNTRY="IN"/g' /config/easy-rsa2/vars
+sed -i 's/export KEY_CITY="SanFrancisco"/export KEY_CITY="Noida"/g' /config/easy-rsa2/vars
+sed -i 's/export KEY_PROVINCE="CA"/export KEY_PROVINCE="UP"/g' /config/easy-rsa2/vars
+sed -i 's/export KEY_ORG="Fort-Funston"/export KEY_ORG="i2k2"/g' /config/easy-rsa2/vars
+cd /config/easy-rsa2/ && source ./vars
+./clean-all
+./build-ca
+./build-dh
+./build-key-server clientOvpn
+mkdir /config/clientOvpn/auth/_ovpncrt1 -p
+sudo cp /config/easy-rsa2/keys/ca.crt /config/clientOvpn/auth/
+sudo cp /config/easy-rsa2/keys/dh2048.pem /config/clientOvpn/auth/
+sudo cp /config/easy-rsa2/keys/clientOvpn.key /config/clientOvpn/auth/
+sudo cp /config/easy-rsa2/keys/clientOvpn.crt /config/clientOvpn/auth/
+./build-key-pass clientOvpncrt1
+cp /config/easy-rsa2/keys/clientOvpncrt1* /config/clientOvpn/auth/_ovpncrt1/
+cp /config/easy-rsa2/keys/ca.crt /config/clientOvpn/auth/_ovpncrt1/
+vi /config/clientOvpn/auth/_ovpncrt1/clientOvpncrt1.ovpn
+show int
+vi /config/clientOvpn/auth/_ovpncrt1/clientOvpncrt1.ovpn
 
 
 
