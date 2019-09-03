@@ -1,0 +1,55 @@
+ADMIN NODE:---
+
+PORTS				NAME					SWITCH (Port)
+nic0				Provisioning (Grey)			S-1(01)
+nic1				Management (Purple)			S-2(01)
+nic2				-----					S-2(25)
+nic3				-----					S-2(13)
+nic4				Externel (10G)				S-3(01)
+nic5				Tenant (10G)				S-3(25)
+nic6				Uplink (RED)				AZ2-CoreSwitch(16)
+nic7				IPMI (Blue)				S-1(37)
+nic8				Switch Management (orange)		S-1(36)
+nic9				RF (Blue)				AZ2-S1(39)
+*************************************************************************************************
+CONTROLLER NODE(1,2,3):---
+
+PORTS				NAME					SWITCH (Port)
+nic0				Provisioning (Grey)			S-1(02,03,04)
+nic1				Management (Purple)			S-2(02,03,04)
+nic2				API (Green)				S-2(26,27,28)
+nic3				Storage (White)				S-2(14,15,16)
+nic4				Externel (10G)				S-3(02,03,04)
+nic5				Tenant (10G)				S-3(26,27,28)
+nic6				Storage Replication (Black)		S-2(37,38,39)
+nic7				-----					
+nic8				-----					
+nic9				-----					
+*************************************************************************************************
+COMPUTE NODE(1,2,3):---
+
+PORTS				NAME					SWITCH (Port)
+nic0				Provisioning (Grey)			S-1(05,06,07)
+nic1				Management (Purple)			S-2(05,06,07)
+nic2				API (Green)				S-2(29,30,31)
+nic3				Storage (White)				S-2(17,18,19)
+nic4				Externel (10G)				S-3(05,06,07)
+nic5				Tenant (10G)				S-3(29,30,31)
+nic6				Storage Replication (Black)		S-2(37,38,39)
+nic7				-----					
+nic8				-----					
+nic9				-----					
+*************************************************************************************************
+STORAGE NODE(1,2,3):---
+
+PORTS				NAME					SWITCH (Port)
+nic0				Provisioning (Grey)			S-1(08,09,10)
+nic1				Management (Purple)			S-2(08,09,10)
+nic2				API (Green)				S-2(32,33,34)
+nic3				Storage (White)				S-2(20,21,22)
+nic4				Externel (10G)				S-3(08,09,10)
+nic5				Tenant (10G)				S-3(32,33,34)
+nic6				Storage Replication (Black)		S-2(40,41,42)
+nic7				-----					
+nic8				-----					
+nic9				-----		
