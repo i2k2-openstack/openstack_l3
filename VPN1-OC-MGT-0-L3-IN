@@ -1,0 +1,34 @@
+vyos@vyos:~$ history
+    1  2019-08-30T13:50:21+0000 sudo mount /dev/cdrom /mnt/
+    2  2019-08-30T13:50:23+0000 sudo mount /dev/cdrom /mnt/
+    3  2019-08-30T13:50:32+0000 sudo /mnt/Linux/install.sh 
+    4  2019-08-30T13:50:37+0000 reboot
+    5  2019-09-02T06:41:04+0000 history
+    6  2019-09-02T10:25:31+0000 confi
+    7  2019-09-02T10:26:23+0000 set int ethernet eth0 address 172.17.17.11/16
+    8  2019-09-02T10:26:49+0000 set int ethernet eth1 address 103.107.67.5/24
+    9  2019-09-02T10:27:06+0000 set int ethernet eth2 address 10.10.20.1/24
+   10  2019-09-02T10:27:18+0000 set system gateway-address 103.107.67.1
+   11  2019-09-02T10:27:28+0000 set service ssh port 1024
+   12  2019-09-02T10:27:41+0000 set service ssh listen-address 172.17.17.11
+   13  2019-09-02T10:27:52+0000 set service ssh listen-address 103.107.67.5
+   14  2019-09-02T10:27:54+0000 commit
+   15  2019-09-02T10:27:56+0000 save
+   16  2019-09-02T13:51:03+0000 exit
+
+
+
+
+vyos@vyos:~$ show interfaces 
+Codes: S - State, L - Link, u - Up, D - Down, A - Admin Down
+Interface        IP Address                        S/L  Description
+---------        ----------                        ---  -----------
+eth0             172.17.17.11/16                   u/u  
+eth1             103.107.67.5/24                   u/u  
+eth2             10.10.20.1/24                     u/u  
+lo               127.0.0.1/8                       u/u  
+                 ::1/128
+vyos@vyos:~$ 
+
+
+
