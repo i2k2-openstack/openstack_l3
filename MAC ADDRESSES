@@ -1,0 +1,71 @@
+ADMIN:-
+
+IDRAC IP:---  172.16.3.43
+XEN IP:--- 172.16.4.43
+IDRAC MAC:--- D4:BE:D9:B6:DB:46	
+NIC0:--- d4:be:d9:b6:db:3e
+
+**************************************************************
+Controller 01 :---
+
+IDRAC IP:---  192.168.3.201
+IDRAC MAC:--- D4:BE:D9:B2:90:83
+NIC0:--- d4:be:d9:b2:90:7b
+
+
+Controller 02 :---
+
+IDRAC IP:---  192.168.3.202
+IDRAC MAC:--- 18:03:73:EC:1E:A6
+NIC0:--- 18:03:73:ec:1e:9e
+
+Controller 03 :---
+
+IDRAC IP:---  192.168.3.203
+IDRAC MAC:--- 00:21:9B:A3:F7:0E
+NIC0:--- 00:21:9b:a3:f7:06
+
+**************************************************
+
+Compute 01 :---
+
+IDRAC IP:---  192.168.3.204
+IDRAC MAC:--- 54:9F:35:1F:BC:1E
+NIC0:---  EC:F4:BB:CF:03:C8
+
+Compute 02 :---
+
+IDRAC IP:---  192.168.3.205
+IDRAC MAC:--- 54:9F:35:1B:53:F4
+NIC0:---  24:6E:96:4C:96:58
+
+
+Compute 03 :---
+
+IDRAC IP:---  192.168.3.206
+IDRAC MAC:--- 54:9F:35:1B:55:C6
+NIC0:---  24:6E:96:4E:1B:44
+
+******************************************************
+
+Storage 01 :---
+
+IDRAC IP:---  192.168.3.207
+IDRAC MAC:--- E0:DB:55:04:89:B6
+NIC0:--- B8:CA:3A:F6:B2:8F
+
+Storage 02 :---
+
+IDRAC IP:---  192.168.3.208
+IDRAC MAC:--- E0:DB:55:0A:91:78
+NIC0:---  B8:CA:3A:F6:98:0F
+
+
+Storage 03 :---
+
+IDRAC IP:---  192.168.3.209
+IDRAC MAC:--- E0:DB:55:08:9B:42
+NIC0:---  B8:CA:3A:F6:9C:68
+
+
+
