@@ -1,0 +1,129 @@
+vyos@FIRE1-OC-MGT-0-L3-IN:~$ history
+    1  2019-08-30T17:18:26+0530 sudo mount /dev/cdrom /mnt/
+    2  2019-08-30T17:18:28+0530 sudo mount /dev/cdrom /mnt/
+    3  2019-08-30T17:18:42+0530 sudo /mnt/Linux/install.sh 
+    4  2019-08-30T17:18:51+0530 reboot
+    5  2019-08-30T17:22:04+0530 show int
+    6  2019-08-30T17:22:09+0530 confi
+    7  2019-08-30T17:25:29+0530 set interfaces ethernet eth1 address 103.107.67.2/24
+    8  2019-08-30T17:25:37+0530 commit
+    9  2019-08-30T17:25:39+0530 save
+   10  2019-08-30T17:25:56+0530 set service ssh port 1024
+   11  2019-08-30T17:28:30+0530 set service ssh listen-address 103.107.67.2
+   12  2019-08-30T17:28:46+0530 set system name-server 8.8.8.8
+   13  2019-08-30T17:29:08+0530 set system time-zone Asia/Kolkata 
+   14  2019-08-30T17:29:12+0530 commit
+   15  2019-08-30T17:29:17+0530 save
+   16  2019-08-30T17:29:33+0530 exit
+   17  2019-08-30T17:29:33+0530 exit
+   18  2019-08-30T17:29:39+0530 ping 8.8.8.8
+   19  2019-08-30T17:33:13+0530 confi
+   20  2019-08-30T17:33:42+0530 set system gateway-address 103.107.67.1
+   21  2019-08-30T17:33:45+0530 commit
+   22  2019-08-30T17:33:46+0530 save
+   23  2019-08-30T17:33:49+0530 exit
+   24  2019-08-30T17:33:49+0530 exit
+   25  2019-08-30T17:33:54+0530 ping 8.8.8
+   26  2019-08-30T17:33:58+0530 ping 8.8.8.8
+   27  2019-08-30T17:45:41+0530 shw int
+   28  2019-08-30T17:45:47+0530 show int
+   29  2019-09-02T11:57:20+0530 history
+   30  2019-09-02T16:05:10+0530 show int
+   31  2019-09-02T16:05:29+0530 confi
+   32  2019-09-02T16:05:49+0530 set int ethernet eth0 address 10.10.0.1/16
+   33  2019-09-02T16:06:17+0530 set int ethernet eth2 address 10.10.20.2/24
+   34  2019-09-02T16:06:20+0530 commit
+   35  2019-09-02T16:06:22+0530 save
+   36  2019-09-02T16:06:25+0530 exit
+   37  2019-09-02T16:06:25+0530 exit
+   38  2019-09-02T16:14:50+0530 sho int
+   39  2019-09-02T16:16:01+0530 confi 
+   40  2019-09-02T16:16:02+0530 set interfaces ethernet eth0 description "External Lan"
+   41  2019-09-02T16:16:02+0530 set interfaces ethernet eth1 description "Red"
+   42  2019-09-02T16:16:02+0530 set interfaces ethernet eth2 description "Mgmt"
+   43  2019-09-02T16:16:25+0530 set system time-zone 'Asia/Kolkata'
+   44  2019-09-02T16:18:14+0530 set firewall name FIREWALL_IN default-action 'drop'
+   45  2019-09-02T16:18:14+0530 set firewall name FIREWALL_IN rule 1 action 'accept'
+   46  2019-09-02T16:18:14+0530 set firewall name FIREWALL_IN rule 1 description 'Establiched Connections'
+   47  2019-09-02T16:18:14+0530 set firewall name FIREWALL_IN rule 1 state established 'enable'
+   48  2019-09-02T16:18:14+0530 set firewall name FIREWALL_IN rule 1 state related 'enable'
+   49  2019-09-02T16:18:14+0530 set firewall name FIREWALL_IN rule 2 action 'accept'
+   50  2019-09-02T16:18:14+0530 set firewall name FIREWALL_IN rule 2 description 'PING Incoming'
+   51  2019-09-02T16:18:14+0530 set firewall name FIREWALL_IN rule 2 destination address '0.0.0.0/0'
+   52  2019-09-02T16:18:14+0530 set firewall name FIREWALL_IN rule 2 protocol 'icmp'
+   53  2019-09-02T16:18:14+0530 set firewall name FIREWALL_IN rule 2 source address '0.0.0.0/0'
+   54  2019-09-02T16:18:14+0530 set firewall name FIREWALL_OUT default-action 'drop'
+   55  2019-09-02T16:18:14+0530 set firewall name FIREWALL_OUT rule 1 action 'accept'
+   56  2019-09-02T16:18:14+0530 set firewall name FIREWALL_OUT rule 1 description 'Established Connections'
+   57  2019-09-02T16:18:14+0530 set firewall name FIREWALL_OUT rule 1 state established 'enable'
+   58  2019-09-02T16:18:14+0530 set firewall name FIREWALL_OUT rule 1 state related 'enable'
+   59  2019-09-02T16:18:14+0530 set firewall name FIREWALL_OUT rule 2 action 'accept'
+   60  2019-09-02T16:18:15+0530 set firewall name FIREWALL_OUT rule 2 description 'DNS Outgoing'
+   61  2019-09-02T16:18:15+0530 set firewall name FIREWALL_OUT rule 2 destination port '53'
+   62  2019-09-02T16:18:15+0530 set firewall name FIREWALL_OUT rule 2 protocol 'udp'
+   63  2019-09-02T16:18:15+0530 set firewall name FIREWALL_OUT rule 3 action 'accept'
+   64  2019-09-02T16:18:15+0530 set firewall name FIREWALL_OUT rule 3 description 'PING Outgoing'
+   65  2019-09-02T16:18:15+0530 set firewall name FIREWALL_OUT rule 3 destination address '0.0.0.0/0'
+   66  2019-09-02T16:18:15+0530 set firewall name FIREWALL_OUT rule 3 protocol 'icmp'
+   67  2019-09-02T16:18:15+0530 set firewall name FIREWALL_OUT rule 3 source address '0.0.0.0/0'
+   68  2019-09-02T16:18:15+0530 set firewall name FIREWALL_OUT rule 400 action 'accept'
+   69  2019-09-02T16:18:15+0530 set firewall name FIREWALL_OUT rule 400 description 'TCP Outgoing'
+   70  2019-09-02T16:18:15+0530 set firewall name FIREWALL_OUT rule 400 destination address '0.0.0.0/0'
+   71  2019-09-02T16:18:15+0530 set firewall name FIREWALL_OUT rule 400 protocol 'tcp'
+   72  2019-09-02T16:18:16+0530 set firewall name FIREWALL_OUT rule 400 source address '0.0.0.0/0'
+   73  2019-09-02T16:19:22+0530 set interfaces ethernet eth1 firewall in name 'FIREWALL_IN'
+   74  2019-09-02T16:19:23+0530 set interfaces ethernet eth0 firewall out name 'FIREWALL_OUT'
+   75  2019-09-02T16:19:46+0530 set nat source rule 9999 outbound-interface 'any'
+   76  2019-09-02T16:19:46+0530 set nat source rule 9999 protocol 'all'
+   77  2019-09-02T16:19:46+0530 set nat source rule 9999 source address '10.10.0.0/16'
+   78  2019-09-02T16:19:49+0530 set nat source rule 9999 translation address 'masquerade'
+   79  2019-09-02T16:19:53+0530 commit
+   80  2019-09-02T16:19:55+0530 save
+   81  2019-09-02T16:20:37+0530 set system host-name 'FIRE1-OC-MGT-0-L3-IN'
+   82  2019-09-02T16:20:40+0530 commit
+   83  2019-09-02T16:20:50+0530 save
+   84  2019-09-02T16:20:53+0530 exit
+   85  2019-09-02T16:20:53+0530 exit
+   86  2019-09-02T16:21:01+0530 reboot
+   87  2019-09-02T16:22:49+0530 show int
+   88  2019-09-02T16:52:48+0530 ip a
+   89  2019-09-02T16:53:13+0530 ping 103.107.67.3
+   90  2019-09-02T16:53:21+0530 ping 103.107.67.2
+   91  2019-09-02T16:53:25+0530 ping 103.107.67.4
+   92  2019-09-02T16:53:52+0530 history
+   93  2019-09-02T17:01:24+0530 ip a
+   94  2019-09-02T17:08:40+0530 history
+   95  2019-09-02T17:09:12+0530 history >/root/history
+   96  2019-09-02T17:09:32+0530 history >history
+   97  2019-09-02T17:09:34+0530 ll
+   98  2019-09-02T17:09:38+0530 ls
+   99  2019-09-02T17:09:43+0530 pwd
+  100  2019-09-02T17:17:16+0530 vi history 
+  101  2019-09-02T18:43:02+0530 show interfaces 
+  102  2019-09-02T18:43:55+0530 history
+  103  2019-09-02T18:45:03+0530 cd
+  104  2019-09-03T10:31:52+0530 history
+  105  2019-09-03T10:41:35+0530 history
+vyos@FIRE1-OC-MGT-0-L3-IN:~$ 
+
+
+
+
+
+
+
+
+
+
+vyos@FIRE1-OC-MGT-0-L3-IN:~$ show interfaces 
+Codes: S - State, L - Link, u - Up, D - Down, A - Admin Down
+Interface        IP Address                        S/L  Description
+---------        ----------                        ---  -----------
+eth0             10.10.0.1/16                      u/u  External Lan 
+eth1             103.107.67.2/24                   u/u  Red 
+eth2             10.10.20.2/24                     u/u  Mgmt 
+lo               127.0.0.1/8                       u/u  
+                 ::1/128
+
+
+
