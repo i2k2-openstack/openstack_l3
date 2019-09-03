@@ -1,5 +1,4 @@
-vyos@vyos:~$ history
-    1  2019-08-30T13:49:26+0000 sudo mount /dev/cdrom /mnt/
+   1  2019-08-30T13:49:26+0000 sudo mount /dev/cdrom /mnt/
     2  2019-08-30T13:49:28+0000 sudo mount /dev/cdrom /mnt/
     3  2019-08-30T13:49:38+0000 sudo /mnt/Linux/install.sh 
     4  2019-08-30T13:49:44+0000 reboot
@@ -17,7 +16,7 @@ vyos@vyos:~$ history
    16  2019-09-02T10:29:49+0000 confi
    17  2019-09-02T10:30:16+0000 set int ethernet eth0 address 10.9.9.1/16
    18  2019-09-02T10:30:32+0000 set int ethernet eth1 address 103.107.67.6/24
-   19  2019-09-02T10:30:56+0000 set int ethernet eth2 address 10.10.20.3/24
+   19  2019-09-02T10:30:56+0000 set int ethernet eth1 address 10.10.20.3/24
    20  2019-09-02T10:31:06+0000 set service ssh port 1024
    21  2019-09-02T10:31:18+0000 set service ssh listen-address 103.107.67.6
    22  2019-09-02T10:31:32+0000 set system gateway-address 103.107.67.1
@@ -26,16 +25,68 @@ vyos@vyos:~$ history
    25  2019-09-02T10:31:53+0000 save
    26  2019-09-02T10:31:59+0000 exit
    27  2019-09-02T10:38:58+0000 ping 8.8.8.8
-  
+   28  2019-09-02T10:39:48+0000 confi
+   29  2019-09-02T10:40:18+0000 del interfaces ethernet eth1 address 10.10.20.3/24 
+   30  2019-09-02T10:40:33+0000 set interfaces ethernet eth2 address 10.10.20.3/24 
+   31  2019-09-02T10:40:35+0000 commit
+   32  2019-09-02T10:40:37+0000 save
+   33  2019-09-02T10:40:39+0000 exit
 
-vyos@vyos:~$ show interfaces 
+
+confi 
+set interfaces ethernet eth0 description "External Lan"
+set interfaces ethernet eth1 description "Red"
+set interfaces ethernet eth2 description "Mgmt"
+set system time-zone 'Asia/Kolkata'
+set firewall name FIREWALL_IN default-action 'drop'
+set firewall name FIREWALL_IN rule 1 action 'accept'
+set firewall name FIREWALL_IN rule 1 description 'Establiched Connections'
+set firewall name FIREWALL_IN rule 1 state established 'enable'
+set firewall name FIREWALL_IN rule 1 state related 'enable'
+set firewall name FIREWALL_IN rule 2 action 'accept'
+set firewall name FIREWALL_IN rule 2 description 'PING Incoming'
+set firewall name FIREWALL_IN rule 2 destination address '0.0.0.0/0'
+set firewall name FIREWALL_IN rule 2 protocol 'icmp'
+set firewall name FIREWALL_IN rule 2 source address '0.0.0.0/0'
+set firewall name FIREWALL_OUT default-action 'drop'
+set firewall name FIREWALL_OUT rule 1 action 'accept'
+set firewall name FIREWALL_OUT rule 1 description 'Established Connections'
+set firewall name FIREWALL_OUT rule 1 state established 'enable'
+set firewall name FIREWALL_OUT rule 1 state related 'enable'
+set firewall name FIREWALL_OUT rule 2 action 'accept'
+set firewall name FIREWALL_OUT rule 2 description 'DNS Outgoing'
+set firewall name FIREWALL_OUT rule 2 destination port '53'
+set firewall name FIREWALL_OUT rule 2 protocol 'udp'
+set firewall name FIREWALL_OUT rule 3 action 'accept'
+set firewall name FIREWALL_OUT rule 3 description 'PING Outgoing'
+set firewall name FIREWALL_OUT rule 3 destination address '0.0.0.0/0'
+set firewall name FIREWALL_OUT rule 3 protocol 'icmp'
+set firewall name FIREWALL_OUT rule 3 source address '0.0.0.0/0'
+set firewall name FIREWALL_OUT rule 400 action 'accept'
+set firewall name FIREWALL_OUT rule 400 description 'TCP Outgoing'
+set firewall name FIREWALL_OUT rule 400 destination address '0.0.0.0/0'
+set firewall name FIREWALL_OUT rule 400 protocol 'tcp'
+set firewall name FIREWALL_OUT rule 400 source address '0.0.0.0/0'
+set interfaces ethernet eth1 firewall in name 'FIREWALL_IN'
+set interfaces ethernet eth0 firewall out name 'FIREWALL_OUT'
+set nat source rule 9999 outbound-interface 'any'
+set nat source rule 9999 protocol 'all'
+set nat source rule 9999 source address '10.9.0.0/16'
+set nat source rule 9999 translation address 'masquerade'
+commit
+save
+set system host-name 'FIRE1-OC-MGT-0-L3-IN'
+commit
+save
+exit
+  
+vyos@FIRE2-UC-MGT-0-L3-IN:~$ show int
 Codes: S - State, L - Link, u - Up, D - Down, A - Admin Down
 Interface        IP Address                        S/L  Description
 ---------        ----------                        ---  -----------
-eth0             10.9.9.1/16                       u/u  
-eth1             103.107.67.6/24                   u/u  
-eth2             10.10.20.3/24                     u/u  
+eth0             10.9.9.1/16                       u/u  External Lan 
+eth1             103.107.67.6/24                   u/u  Red 
+eth2             10.10.20.3/24                     u/u  Mgmt 
 lo               127.0.0.1/8                       u/u  
                  ::1/128
-vyos@vyos:~$ 
-vyos@vyos:~$ 
+
