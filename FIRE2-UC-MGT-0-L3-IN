@@ -1,0 +1,41 @@
+vyos@vyos:~$ history
+    1  2019-08-30T13:49:26+0000 sudo mount /dev/cdrom /mnt/
+    2  2019-08-30T13:49:28+0000 sudo mount /dev/cdrom /mnt/
+    3  2019-08-30T13:49:38+0000 sudo /mnt/Linux/install.sh 
+    4  2019-08-30T13:49:44+0000 reboot
+    5  2019-09-02T06:33:52+0000 history
+    6  2019-09-02T06:34:01+0000 uptime
+    7  2019-09-02T06:34:09+0000 show interfaces 
+    8  2019-09-02T10:29:49+0000 confi
+    9  2019-08-30T13:49:26+0000 sudo mount /dev/cdrom /mnt/
+   10  2019-08-30T13:49:28+0000 sudo mount /dev/cdrom /mnt/
+   11  2019-08-30T13:49:38+0000 sudo /mnt/Linux/install.sh 
+   12  2019-08-30T13:49:44+0000 reboot
+   13  2019-09-02T06:33:52+0000 history
+   14  2019-09-02T06:34:01+0000 uptime
+   15  2019-09-02T06:34:09+0000 show interfaces 
+   16  2019-09-02T10:29:49+0000 confi
+   17  2019-09-02T10:30:16+0000 set int ethernet eth0 address 10.9.9.1/16
+   18  2019-09-02T10:30:32+0000 set int ethernet eth1 address 103.107.67.6/24
+   19  2019-09-02T10:30:56+0000 set int ethernet eth2 address 10.10.20.3/24
+   20  2019-09-02T10:31:06+0000 set service ssh port 1024
+   21  2019-09-02T10:31:18+0000 set service ssh listen-address 103.107.67.6
+   22  2019-09-02T10:31:32+0000 set system gateway-address 103.107.67.1
+   23  2019-09-02T10:31:43+0000 set system name-server 8.8.8.8
+   24  2019-09-02T10:31:50+0000 commit
+   25  2019-09-02T10:31:53+0000 save
+   26  2019-09-02T10:31:59+0000 exit
+   27  2019-09-02T10:38:58+0000 ping 8.8.8.8
+  
+
+vyos@vyos:~$ show interfaces 
+Codes: S - State, L - Link, u - Up, D - Down, A - Admin Down
+Interface        IP Address                        S/L  Description
+---------        ----------                        ---  -----------
+eth0             10.9.9.1/16                       u/u  
+eth1             103.107.67.6/24                   u/u  
+eth2             10.10.20.3/24                     u/u  
+lo               127.0.0.1/8                       u/u  
+                 ::1/128
+vyos@vyos:~$ 
+vyos@vyos:~$ 
