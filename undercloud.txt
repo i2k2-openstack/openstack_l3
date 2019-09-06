@@ -1,0 +1,89 @@
+(undercloud) [stack@undercloud ~]$
+(undercloud) [stack@undercloud ~]$ history
+    1  mkdir ~/images
+    2  mkdir ~/templates
+    3  sudo yum install -y https://trunk.rdoproject.org/centos7/current/python2-tripleo-repos-0.0.1-0.20190724014728.1cf6e0b.el7.noarch.rpm
+    4  sudo -E tripleo-repos -b rocky current ceph
+    5  sudo yum install -y python-tripleoclient ceph-ansible
+    6  openstack tripleo container image prepare default   --local-push-destination   --output-env-file /home/stack/templates/containers-prepare-parameter.y                                                                         aml
+    7  vi undercloud.conf
+    8  ll
+    9  cat undercloud.conf
+   10  openstack undercloud install
+   11  ping 192.168.2.201
+   12  sudo yum install wget -y
+   13  wget https://images.rdoproject.org/master/delorean/current-tripleo/overcloud-full.tar --no-check-certificate
+   14  ll
+   15  tar -xpvf ironic-python-agent.tar -C ~/images/
+   16  tar -xpvf overcloud-full.tar -C ~/images/
+   17  source stackrc
+   18  openstack overcloud image upload --image-path ~/images/
+   19  openstack image list
+   20  openstack subnet show ctlplane-subnet
+   21  ip a
+   22  openstack overcloud node import instackenv.json
+   23  openstack baremetal node list
+   24  openstack overcloud node introspect --all-manageable --provide
+   25  sudo docker ps
+   26  sudo reboot
+   27  sudo docker ps
+   28  source stackrc
+   29  openstack baremetal node list
+   30  openstack baremetal introspection start 8f2fdc95-ecd8-43c8-ba93-842322f865a1 24b7f24c-13be-4ef6-ba55-886f55f30591
+   31  openstack baremetal introspection status 24b7f24c-13be-4ef6-ba55-886f55f30591
+   32  openstack baremetal introspection status 8f2fdc95-ecd8-43c8-ba93-842322f865a1
+   33  sudo find / -name inspector.ipxe
+   34  sudo vi /var/lib/config-data/puppet-generated/ironic_inspector/var/lib/ironic/httpboot/inspector.ipxe
+   35  sudo vi /var/lib/ironic/httpboot/inspector.ipxe
+   36  sudo vi /var/lib/config-data/ironic_inspector/var/lib/ironic/httpboot/inspector.ipxe
+   37  sudo docker ps
+   38  sudo docker ps | grep ironic
+   39  sudo docker restart c59221ab4fdd 7bec74e68427 a9329100f837 12521874ab84 ed96433c2122 6add0b7c11a4 e36d02f2a048
+   40  openstack baremetal node list
+   41  openstack baremetal introspection abort 8f2fdc95-ecd8-43c8-ba93-842322f865a1
+   42  openstack baremetal introspection status 8f2fdc95-ecd8-43c8-ba93-842322f865a1
+   43  openstack overcloud node introspect --all-manageable --provide
+   44  openstack baremetal node list
+   45  history
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1  mkdir ~/images
+    2  mkdir ~/templates
+    3  sudo yum install -y https://trunk.rdoproject.org/centos7/current/python2-                                                                                                                                                     tripleo-repos-0.0.1-0.20190724014728.1cf6e0b.el7.noarch.rpm
+    4  sudo -E tripleo-repos -b rocky current ceph
+    5  sudo yum install -y python-tripleoclient ceph-ansible
+    6  openstack tripleo container image prepare default   --local-push-destinat                                                                                                                                                     ion   --output-env-file /home/stack/templates/containers-prepare-parameter.yaml
+    7  vi undercloud.conf
+    8  ll
+    9  cat undercloud.conf
+   10  openstack undercloud install
+   11  ping 192.168.2.201
+   12  sudo yum install wget -y
+   13  wget https://images.rdoproject.org/master/delorean/current-tripleo/overcl                                                                                                                                                     oud-full.tar --no-check-certificate
+   14  ll
+   15  tar -xpvf ironic-python-agent.tar -C ~/images/
+   16  tar -xpvf overcloud-full.tar -C ~/images/
+   17  source stackrc
+   18  openstack overcloud image upload --image-path ~/images/
+   19  openstack image list
+   20  openstack subnet show ctlplane-subnet
+   21  ip a
+   22  openstack overcloud node import instackenv.json
+   23  openstack baremetal node list
+   24  openstack overcloud node introspect --all-manageable --provide
+   25  sudo docker ps
+   26  sudo reboot
+   27  history
+[stack@undercloud ~]$
