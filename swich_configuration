@@ -1,0 +1,37 @@
+###Switch Configuration:-
+
+#######Login into console#################
+
+
+#***switching>en
+#***password:   #enter
+#***switching#
+########BASIC Configuration################
+show version				#to check switch version
+show bootvar				#to check all available versions
+show run				#to check all configurations of switch
+show port all				#to check all port 
+clear config				#to remove all existing configuration
+serviceport protocol none		#Disable DHCP for the management port
+serviceport ip <IPADDRESS> <SUBNETMASK> 0.0.0.0		#to set ip address
+no shutdown all				#to enable all ports
+hostname <HOSTNAME>			#set hostname
+write memory				#save the changes
+
+########to create VLAN#####################
+vlan database				#to enter in vlan database
+	vlan 11-400			#create vlan 390 (11-400)
+	exit
+write memory 				#save the changes
+configure				#global config mode
+	interface 0/1			#enter interface for 0/1 port
+	vlan participation include 11-400	#make port 0/1 participate in all vlan 11-400
+	vlan tagging 11-400		#tagging for port 0/1
+	no shutdown
+	exit
+	.........			#repeate for all ports
+write memory
+	
+
+
+
